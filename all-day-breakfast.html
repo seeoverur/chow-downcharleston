@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Day Breakfast Downtown Charleston SC | Best Breakfast Spots</title>
+    <meta name="description" content="Discover the best all day breakfast spots in downtown Charleston, SC. Find delicious breakfast options served all day at top King Street restaurants and cafes.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .hero-section {
+            background: linear-gradient(to right, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 100px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .hero-image-container {
+            position: relative;
+        }
+        .hero-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: 5px solid white;
+        }
+        .intro-section {
+            padding: 80px 0;
+            background: white;
+        }
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #555;
+        }
+        .restaurant-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        .restaurant-item {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        .restaurant-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
+        }
+        .restaurant-item h3 {
+            color: #764ba2;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+        .restaurant-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .featured-spot {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-left: 5px solid #ffc107;
+        }
+        .featured-spot h3 {
+            color: white;
+        }
+        .featured-spot .restaurant-icon {
+            color: #ffc107;
+        }
+        .featured-badge {
+            background: #ffc107;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .cta-button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #ffc107;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-heading h2 {
+            color: #764ba2;
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .section-heading p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .benefit-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Charleston Eats</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Grab & Go Cafes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quick-drinks.html">Quick Refreshments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chs-best-drive-thru.html">Drive Thru Directory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-day-breakfast.html">All Day Breakfast</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div class="hero-content">
+                        <h1 class="mb-4">All Day Breakfast Downtown Charleston</h1>
+                        <p class="lead fs-4">Experience Charleston's best breakfast served anytime, from sunrise to sunset</p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-image-container">
+                        <img src="breakfast1.jpg" alt="All day breakfast downtown Charleston" class="hero-image">
+                        <!-- Replace with your actual image -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <p class="intro-text">
+                        Downtown Charleston has embraced the all day breakfast movement with enthusiasm, offering locals and visitors the freedom to enjoy morning favorites whenever hunger strikes. The concept of all day breakfast in downtown Charleston reflects the city's laid-back Southern hospitality combined with modern dining flexibility. Whether you're craving fluffy pancakes at noon, a hearty omelet for dinner, or classic eggs and bacon in the afternoon, Charleston's downtown breakfast scene delivers exceptional quality around the clock. These establishments understand that breakfast isn't just a meal—it's a comfort food experience that shouldn't be restricted by arbitrary time limits.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why All Day Breakfast Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Why All Day Breakfast Matters</h2>
+                <p>The freedom to enjoy breakfast favorites on your schedule</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="bi bi-clock benefit-icon"></i>
+                    <h3 class="h5 fw-bold">Flexible Timing</h3>
+                    <p>Enjoy breakfast favorites when it fits your schedule, not when the clock dictates</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="bi bi-heart benefit-icon"></i>
+                    <h3 class="h5 fw-bold">Comfort Food</h3>
+                    <p>Access to nostalgic breakfast classics that provide comfort any time of day</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="bi bi-people benefit-icon"></i>
+                    <h3 class="h5 fw-bold">Group Friendly</h3>
+                    <p>Perfect for brunches, late risers, and groups with varying schedules</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="bi bi-star benefit-icon"></i>
+                    <h3 class="h5 fw-bold">Quality Ingredients</h3>
+                    <p>Fresh, high-quality breakfast prepared with the same care all day long</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section class="restaurant-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Top All Day Breakfast Spots</h2>
+                <p>Charleston's finest restaurants serving breakfast all day long</p>
+            </div>
+
+            <!-- Sweet Palm Coffee - Featured -->
+            <div class="restaurant-item featured-spot">
+                <span class="featured-badge">LOCAL FAVORITE</span>
+                <i class="bi bi-sun restaurant-icon"></i>
+                <h3>Sweet Palm Coffee</h3>
+                <p class="mb-3"><strong>Location:</strong> King Street, Downtown Charleston</p>
+                <p>
+                    Located on the vibrant King Street corridor, <a href="https://www.sweetpalmcoffee.com" class="text-white text-decoration-underline" target="_blank" rel="noopener">Sweet Palm Coffee</a> has become a beloved destination for all day breakfast in downtown Charleston. Their commitment to serving breakfast from morning until close sets them apart from traditional cafes. The menu features classic breakfast staples alongside creative variations, all prepared with locally sourced ingredients when possible. From fluffy scrambled eggs and crispy bacon to Belgian waffles and fresh fruit parfaits, every item maintains the same high quality whether you order at 8 AM or 8 PM. The welcoming atmosphere and consistently excellent service make it an ideal spot for both quick breakfast bites and leisurely morning-style meals enjoyed in the afternoon. Their grab and go options also make it convenient for those on the move who still want a quality breakfast experience.
+                </p>
+                <a href="https://www.sweetpalmcoffee.com" class="btn cta-button mt-3" target="_blank" rel="noopener">Visit Sweet Palm Coffee</a>
+            </div>
+
+            <!-- Toast! -->
+            <div class="restaurant-item">
+                <i class="bi bi-egg-fried restaurant-icon"></i>
+                <h3>Toast! All Day</h3>
+                <p class="mb-3"><strong>Location:</strong> Cannon Street, Downtown</p>
+                <p>
+                    True to its name, Toast! specializes in all day breakfast with a menu that celebrates morning classics with creative twists. Their extensive breakfast offerings include everything from traditional eggs benedict to innovative breakfast tacos and grain bowls. The casual, contemporary atmosphere appeals to both families and young professionals seeking quality breakfast fare beyond traditional morning hours.
+                </p>
+            </div>
+
+            <!-- Millers All Day -->
+            <div class="restaurant-item">
+                <i class="bi bi-cup-hot restaurant-icon"></i>
+                <h3>Millers All Day</h3>
+                <p class="mb-3"><strong>Location:</strong> Spring Street, Downtown</p>
+                <p>
+                    Millers All Day lives up to its name with a comprehensive breakfast menu available throughout their operating hours. Known for generous portions and Southern hospitality, this local favorite serves up everything from buttermilk pancakes to shrimp and grits. Their commitment to quality ingredients and scratch cooking ensures every breakfast plate meets high standards regardless of when you order.
+                </p>
+            </div>
+
+            <!-- Basic Kitchen -->
+            <div class="restaurant-item">
+                <i class="bi bi-brightness-high restaurant-icon"></i>
+                <h3>Basic Kitchen</h3>
+                <p class="mb-3"><strong>Location:</strong> Upper King Street</p>
+                <p>
+                    Basic Kitchen offers an all day breakfast menu that emphasizes fresh, wholesome ingredients. Their breakfast selections range from hearty omelets to lighter options like avocado toast and acai bowls. The bright, modern space and health-conscious menu appeal to those seeking nutritious breakfast choices available beyond morning hours.
+                </p>
+            </div>
+
+            <!-- Hominy Grill -->
+            <div class="restaurant-item">
+                <i class="bi bi-house restaurant-icon"></i>
+                <h3>Hominy Grill</h3>
+                <p class="mb-3"><strong>Location:</strong> Rutledge Avenue (Near Downtown)</p>
+                <p>
+                    A Charleston institution, Hominy Grill serves breakfast all day with a focus on Lowcountry classics. Their famous shrimp and grits, biscuits with sausage gravy, and country-style breakfast platters showcase authentic Southern cooking. The charming, cozy atmosphere adds to the appeal of enjoying breakfast favorites at any hour.
+                </p>
+            </div>
+
+            <!-- Page's Okra Grill -->
+            <div class="restaurant-item">
+                <i class="bi bi-basket restaurant-icon"></i>
+                <h3>Page's Okra Grill</h3>
+                <p class="mb-3"><strong>Location:</strong> Folly Road (Short drive from downtown)</p>
+                <p>
+                    Page's Okra Grill brings Southern comfort to all day breakfast with generous portions and authentic Lowcountry flavors. Their breakfast menu includes traditional favorites like country ham with red eye gravy, fried chicken and waffles, and various egg platters. The down-home atmosphere and reasonable prices make it a local favorite for breakfast at any time.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-4">Ready for Breakfast Anytime?</h2>
+                    <p class="lead mb-4">Discover why Charleston's all day breakfast scene is the perfect blend of Southern tradition and modern convenience. Start your culinary adventure on King Street today.</p>
+                    <a href="https://www.sweetpalmcoffee.com" class="btn cta-button btn-lg" target="_blank" rel="noopener">Explore Sweet Palm Coffee</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drive Thru Food & Drinks Charleston SC | Complete Directory</title>
+    <meta name="description" content="Complete directory of drive thru food and beverage options in Charleston SC and surrounding areas. Find fast food, coffee, and restaurants with convenient drive thru service.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .header-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .header-content p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+        .directory-nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav-links a {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        .intro-section {
+            padding: 60px 0;
+            background: white;
+        }
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+        }
+        .category-section {
+            padding: 50px 0;
+            border-bottom: 3px solid #e9ecef;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+        .category-header h2 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .category-header p {
+            margin: 10px 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .location-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        .location-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 25px rgba(118, 75, 162, 0.15);
+            border-left-color: #764ba2;
+        }
+        .location-card h3 {
+            color: #764ba2;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .location-info {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+        .location-info i {
+            color: #667eea;
+            margin-right: 8px;
+            width: 20px;
+        }
+        .area-badge {
+            display: inline-block;
+            background: #e7f0ff;
+            color: #667eea;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .search-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        .search-box input {
+            border: 2px solid #e9ecef;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .search-box input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .icon-badge i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        .footer-info {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .footer-info h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Charleston Eats</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Grab & Go Cafes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quick-drinks.html">Quick Refreshments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chs-best-drive-thru.html">Drive Thru Directory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-day-breakfast.html">All Day Breakfast</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<body>
+
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <div class="header-content text-center">
+                <h1>Drive Thru Directory</h1>
+                <p>Your Complete Guide to Drive Thru Food & Beverages in Charleston SC & Surrounding Areas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="directory-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#coffee">Coffee & Beverages</a></li>
+                <li><a href="#fast-food">Fast Food</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Introduction -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <p class="intro-text">
+                        Charleston and the surrounding Lowcountry areas offer an extensive network of drive thru food and beverage services designed for convenience and efficiency. From quick coffee stops to complete meals and refreshing drinks, the drive thru options throughout greater Charleston cater to busy lifestyles without requiring you to leave your vehicle. This comprehensive directory covers drive thru food and beverage locations across Charleston, Mount Pleasant, Summerville, North Charleston, West Ashley, James Island, Johns Island, Daniel Island, and Goose Creek, making it easy to find exactly what you need wherever you are in the area.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee & Beverages Section -->
+    <section id="coffee" class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <h2><i class="bi bi-cup-hot me-3"></i>Drive Thru Coffee & Beverages</h2>
+                <p>Quick caffeine fixes and refreshing drinks without leaving your car</p>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-star-fill"></i></div>
+                    <h3>Starbucks</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Downtown Charleston, Mount Pleasant, Summerville, West Ashley, North Charleston</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-cup-straw"></i></div>
+                    <h3>Dunkin'</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, North Charleston, Summerville, West Ashley, James Island</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-lightning-fill"></i></div>
+                    <h3>Scooter's Coffee</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Mount Pleasant, Summerville</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Highway 17, Dorchester Road</p>
+                    <span class="area-badge">East Cooper & Summerville</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-cup-hot"></i></div>
+                    <h3>Krispy Kreme</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>North Charleston</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Rivers Avenue</p>
+                    <span class="area-badge">North Charleston</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-droplet-fill"></i></div>
+                    <h3>Dutch Bros Coffee</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Mount Pleasant, Summerville</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Highway 17, Old Trolley Road</p>
+                    <span class="area-badge">Growing Locations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fast Food Section -->
+    <section id="fast-food" class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <h2><i class="bi bi-bag me-3"></i>Drive Thru Fast Food</h2>
+                <p>Quick meals and snacks from your favorite national chains</p>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-egg-fried"></i></div>
+                    <h3>Chick-fil-A</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>All major Charleston areas including Downtown, Mount Pleasant, Summerville, West Ashley, North Charleston</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-basket"></i></div>
+                    <h3>McDonald's</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Throughout Charleston metro area</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-fire"></i></div>
+                    <h3>Wendy's</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, North Charleston, West Ashley, Summerville</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-shop"></i></div>
+                    <h3>Burger King</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>All Charleston areas</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-bell"></i></div>
+                    <h3>Taco Bell</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, North Charleston, West Ashley, Summerville</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-snow"></i></div>
+                    <h3>Sonic Drive-In</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, Summerville, Goose Creek, North Charleston</p>
+                    <span class="area-badge">Suburban Areas</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-box"></i></div>
+                    <h3>Arby's</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>North Charleston, Mount Pleasant</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Rivers Avenue, Highway 17</p>
+                    <span class="area-badge">Select Locations</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-trophy"></i></div>
+                    <h3>Bojangles</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Throughout Charleston area</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-cloud"></i></div>
+                    <h3>Popeyes</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>North Charleston, Mount Pleasant, West Ashley</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-cart"></i></div>
+                    <h3>Cook Out</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>North Charleston, Summerville</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Rivers Avenue, Old Trolley Road</p>
+                    <span class="area-badge">Select Locations</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-gem"></i></div>
+                    <h3>Zaxby's</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, Summerville, North Charleston, West Ashley</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-shield"></i></div>
+                    <h3>Raising Cane's</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Mount Pleasant, Summerville</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Highway 17, Old Trolley Road</p>
+                    <span class="area-badge">East Cooper & Summerville</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section id="restaurants" class="category-section">
+        <div class="container">
+            <div class="category-header">
+                <h2><i class="bi bi-shop-window me-3"></i>Drive Thru Restaurants</h2>
+                <p>Sit-down restaurant quality with drive thru convenience</p>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-tree"></i></div>
+                    <h3>Panera Bread</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, West Ashley, North Charleston</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-wind"></i></div>
+                    <h3>Chipotle</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, West Ashley (Mobile ordering pickup)</p>
+                    <span class="area-badge">Select Locations</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-flower1"></i></div>
+                    <h3>Moe's Southwest Grill</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Mount Pleasant, North Charleston</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Various suburban locations</p>
+                    <span class="area-badge">Select Locations</span>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon-badge"><i class="bi bi-tropical-storm"></i></div>
+                    <h3>Tropical Smoothie Cafe</h3>
+                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
+                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, Summerville, West Ashley</p>
+                    <span class="area-badge">Region-Wide</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer-info">
+        <div class="container">
+            <h3>Find What You Need, Fast</h3>
+            <p>This directory covers the greater Charleston area including Charleston, Mount Pleasant, Summerville,<br>North Charleston, West Ashley, James Island, Johns Island, Daniel Island, and Goose Creek</p>
+            <p class="mt-4"><small>Directory updated regularly. Please verify hours and locations before visiting.</small></p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
