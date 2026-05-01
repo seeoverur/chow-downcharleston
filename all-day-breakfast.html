@@ -3,329 +3,676 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Day Breakfast Downtown Charleston SC | Best Breakfast Spots</title>
-    <meta name="description" content="Discover the best all day breakfast spots in downtown Charleston, SC. Find delicious breakfast options served all day at top King Street restaurants and cafes.">
+    <title>All Day Breakfast Near Me Downtown Charleston SC | King Street Breakfast Brunch Lunch</title>
+    <meta name="description" content="Looking for all day breakfast near me in downtown Charleston SC? Sweet Palm Coffee on King Street serves breakfast, brunch, and lunch all day. Best breakfast spot near you on King Street Charleston.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --blue-main: #1a56a0;
+            --blue-light: #4a90d9;
+            --blue-dark: #0d2f5e;
+            --blue-tint: #e8f1fb;
+            --dark: #0d1b2e;
+            --muted: #555;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            background: #fff;
         }
+
+        /* ─── NAVBAR ─── */
+        .navbar {
+            background: var(--blue-main) !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        /* ─── HERO ─── */
         .hero-section {
-            background: linear-gradient(to right, #764ba2 0%, #667eea 100%);
+            background: linear-gradient(160deg, var(--blue-main) 0%, var(--blue-dark) 100%);
             color: white;
-            padding: 100px 0;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        .hero-image-container {
+            padding: 90px 0 0;
+            overflow: hidden;
             position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -80px;
+            width: 420px; height: 420px;
+            background: radial-gradient(circle, rgba(74,144,217,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-eyebrow {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--blue-light);
+            margin-bottom: 14px;
+        }
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero-section .lead {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 480px;
+            line-height: 1.7;
+        }
+        .hero-cta-btn {
+            background: var(--blue-light);
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 28px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 18px rgba(74,144,217,0.4);
+        }
+        .hero-cta-btn:hover {
+            background: #fff;
+            color: var(--blue-main);
+            transform: translateY(-2px);
         }
         .hero-image {
             width: 100%;
-            height: 450px;
+            height: 420px;
             object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            border: 5px solid white;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 -8px 40px rgba(0,0,0,0.25);
+            display: block;
+            margin-top: 40px;
         }
-        .intro-section {
-            padding: 80px 0;
-            background: white;
+
+        /* ─── NEAR ME SIGNAL BAR ─── */
+        .near-me-bar {
+            background: var(--blue-main);
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
         }
+        .near-me-bar strong { color: #a8d4ff; }
+
+        /* ─── SECTION DIVIDER ─── */
+        .section-divider {
+            width: 50px;
+            height: 4px;
+            background: var(--blue-light);
+            border-radius: 2px;
+            margin: 0 0 28px;
+        }
+        .section-divider.center { margin: 0 auto 32px; }
+
+        /* ─── INTRO ─── */
+        .intro-section { padding: 60px 0 20px; background: #fff; }
         .intro-text {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: #555;
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: #444;
         }
-        .restaurant-section {
-            padding: 60px 0;
-            background: #f8f9fa;
+
+        /* ─── SWEET PALM MAIN FEATURE ─── */
+        .sweet-palm-feature {
+            background: var(--blue-tint);
+            border-left: 5px solid var(--blue-main);
+            border-radius: 0 16px 16px 0;
+            padding: 36px 40px;
+            margin: 40px 0 56px;
         }
-        .restaurant-item {
-            background: white;
-            border-radius: 15px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-left: 5px solid #667eea;
-            transition: all 0.3s ease;
-        }
-        .restaurant-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
-        }
-        .restaurant-item h3 {
-            color: #764ba2;
+        .sweet-palm-feature .badge-label {
+            background: var(--blue-main);
+            color: #fff;
+            font-size: 0.7rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            font-size: 1.6rem;
-        }
-        .restaurant-icon {
-            font-size: 3rem;
-            color: #667eea;
-            margin-bottom: 20px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
             display: inline-block;
+            margin-bottom: 14px;
         }
-        .featured-spot {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-left: 5px solid #ffc107;
+        .sweet-palm-feature h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--blue-main);
+            margin-bottom: 8px;
         }
-        .featured-spot h3 {
-            color: white;
+        .sweet-palm-feature .address-line {
+            font-size: 0.95rem;
+            color: var(--blue-light);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
         }
-        .featured-spot .restaurant-icon {
-            color: #ffc107;
+        .sweet-palm-feature p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 18px;
         }
-        .featured-badge {
-            background: #ffc107;
-            color: #333;
-            padding: 5px 15px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        .cta-section {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .cta-button {
-            background: white;
-            color: #667eea;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-weight: 700;
+        .sweet-palm-feature .visit-btn {
+            background: var(--blue-main);
+            color: #fff;
+            padding: 13px 34px;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
         }
-        .cta-button:hover {
-            background: #ffc107;
-            color: #333;
-            transform: scale(1.1);
+        .sweet-palm-feature .visit-btn:hover {
+            background: var(--blue-dark);
+            color: #fff;
+            transform: translateY(-1px);
         }
-        .section-heading {
+
+        /* ─── FEATURE PILLS ─── */
+        .feature-pill {
+            background: rgba(26,86,160,0.1);
+            color: var(--blue-main);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin: 4px 3px;
+        }
+
+        /* ─── MENU HIGHLIGHT CARDS ─── */
+        .menu-section { padding: 60px 0; background: #f5f8fd; }
+        .menu-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px 24px;
+            height: 100%;
+            border: 1px solid #dce8f5;
+            box-shadow: 0 2px 12px rgba(26,86,160,0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
             text-align: center;
-            margin-bottom: 50px;
         }
-        .section-heading h2 {
-            color: #764ba2;
-            font-weight: 800;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(26,86,160,0.12);
         }
-        .section-heading p {
+        .menu-card .menu-icon {
+            font-size: 2.4rem;
+            color: var(--blue-main);
+            margin-bottom: 14px;
+            display: block;
+        }
+        .menu-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .menu-card p {
+            font-size: 0.93rem;
             color: #666;
-            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 0;
         }
-        .benefits-grid {
+        .menu-card .item-list {
+            margin-top: 14px;
+            text-align: left;
+        }
+        .menu-card .item-list span {
+            display: block;
+            font-size: 0.88rem;
+            color: #555;
+            padding: 3px 0;
+        }
+        .menu-card .item-list span::before {
+            content: "→ ";
+            color: var(--blue-main);
+            font-weight: 700;
+        }
+
+        /* ─── OTHER SPOTS ─── */
+        .other-section { padding: 64px 0; background: #fff; }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--blue-main);
+            font-weight: 700;
+        }
+        .other-card {
+            border-left: 4px solid var(--blue-light);
+            border-radius: 0 12px 12px 0;
+            padding: 26px 28px;
+            margin-bottom: 24px;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(26,86,160,0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .other-card:hover {
+            transform: translateX(6px);
+            box-shadow: 0 6px 22px rgba(26,86,160,0.13);
+        }
+        .other-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .other-card .loc {
+            font-size: 0.85rem;
+            color: var(--blue-light);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .other-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ─── WHY SECTION ─── */
+        .why-section {
+            background: linear-gradient(160deg, var(--blue-main) 0%, var(--blue-dark) 100%);
+            color: #fff;
+            padding: 64px 0;
+        }
+        .why-section .section-title { color: #fff; }
+        .why-section p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.08rem;
+            line-height: 1.85;
+        }
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 24px;
+            margin-top: 36px;
         }
-        .benefit-card {
+        .why-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 24px 20px;
             text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
         }
-        .benefit-icon {
-            font-size: 3rem;
-            color: #667eea;
-            margin-bottom: 20px;
+        .why-card i {
+            font-size: 2rem;
+            color: var(--blue-light);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .why-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .why-card p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ─── FINAL CTA ─── */
+        .final-cta {
+            background: var(--blue-tint);
+            padding: 72px 0;
+            text-align: center;
+        }
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--blue-main);
+            margin-bottom: 16px;
+        }
+        .final-cta p {
+            color: #555;
+            font-size: 1.08rem;
+            line-height: 1.75;
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+        .final-cta .main-cta {
+            background: var(--blue-main);
+            color: #fff;
+            padding: 15px 44px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 18px rgba(26,86,160,0.3);
+        }
+        .final-cta .main-cta:hover {
+            background: var(--blue-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
-<!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Charleston Eats</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Grab & Go Cafes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="quick-drinks.html">Quick Refreshments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="chs-best-drive-thru.html">Drive Thru Directory</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="all-day-breakfast.html">All Day Breakfast</a>
-                    </li>
-                </ul>
-            </div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Charleston Eats</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Grab &amp; Go Cafes</a></li>
+                <li class="nav-item"><a class="nav-link" href="quick-drinks.html">Quick Refreshments</a></li>
+                <li class="nav-item"><a class="nav-link" href="chs-best-drive-thru.html">Drive Thru Directory</a></li>
+                <li class="nav-item"><a class="nav-link active" href="all-day-breakfast.html">All Day Breakfast</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-4 mb-lg-0">
-                    <div class="hero-content">
-                        <h1 class="mb-4">All Day Breakfast Downtown Charleston</h1>
-                        <p class="lead fs-4">Experience Charleston's best breakfast served anytime, from sunrise to sunset</p>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="hero-image-container">
-                        <img src="breakfast1.jpg" alt="All day breakfast downtown Charleston" class="hero-image">
-                        <!-- Replace with your actual image -->
-                    </div>
-                </div>
+<!-- ─── NEAR ME SIGNAL BAR ─── -->
+<div class="near-me-bar">
+    <i class="bi bi-geo-alt-fill me-2"></i>
+    Searching for <strong>all day breakfast near me in downtown Charleston?</strong> — Sweet Palm Coffee on King Street is open for breakfast, brunch &amp; lunch all day.
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-6 pb-5 pb-lg-0">
+                <p class="hero-eyebrow"><i class="bi bi-geo-alt-fill me-1"></i> King Street · Downtown Charleston, SC</p>
+                <h1>All Day Breakfast, Brunch &amp; Lunch Near Me — Downtown Charleston</h1>
+                <p class="lead">Sweet Palm Coffee on King Street serves breakfast and lunch all day long. No cutoff times. No waiting for brunch hours. Just great food whenever you want it in downtown Charleston.</p>
+                <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="hero-cta-btn">
+                    <i class="bi bi-egg-fried me-2"></i>Visit Sweet Palm Coffee
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <img src="breakfast1.jpg" alt="All day breakfast near me downtown Charleston King Street Sweet Palm Coffee" class="hero-image">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Introduction Section -->
-    <section class="intro-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <p class="intro-text">
-                        Downtown Charleston has embraced the all day breakfast movement with enthusiasm, offering locals and visitors the freedom to enjoy morning favorites whenever hunger strikes. The concept of all day breakfast in downtown Charleston reflects the city's laid-back Southern hospitality combined with modern dining flexibility. Whether you're craving fluffy pancakes at noon, a hearty omelet for dinner, or classic eggs and bacon in the afternoon, Charleston's downtown breakfast scene delivers exceptional quality around the clock. These establishments understand that breakfast isn't just a meal—it's a comfort food experience that shouldn't be restricted by arbitrary time limits.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ─── INTRO ─── -->
+<section class="intro-section">
+    <div class="container">
+        <div class="col-lg-10 mx-auto">
+            <h2 class="h5 fw-bold mb-2">The Best All Day Breakfast Near You in Downtown Charleston</h2>
+            <div class="section-divider"></div>
+            <p class="intro-text mb-4">
+                If you're in downtown Charleston searching for all day breakfast near you on King Street, you already know how hard it is to find a spot that actually serves real breakfast food past 11am. Most places flip to a lunch-only menu and leave you stuck. That's not the case at <strong>Sweet Palm Coffee</strong>. Whether you're rolling in at 8am before a walk down the historic district or showing up at 1pm after a late morning — breakfast, brunch, and lunch are all on the table.
+            </p>
+            <p class="intro-text mb-0">
+                Sweet Palm Coffee sits right on King Street in the heart of downtown Charleston, making it the most conveniently located all day breakfast spot near you if you're anywhere in the King Street corridor, the French Quarter, or the Market area. Walk in, order, grab your food. That's it.
+            </p>
 
-    <!-- Why All Day Breakfast Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Why All Day Breakfast Matters</h2>
-                <p>The freedom to enjoy breakfast favorites on your schedule</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="bi bi-clock benefit-icon"></i>
-                    <h3 class="h5 fw-bold">Flexible Timing</h3>
-                    <p>Enjoy breakfast favorites when it fits your schedule, not when the clock dictates</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="bi bi-heart benefit-icon"></i>
-                    <h3 class="h5 fw-bold">Comfort Food</h3>
-                    <p>Access to nostalgic breakfast classics that provide comfort any time of day</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="bi bi-people benefit-icon"></i>
-                    <h3 class="h5 fw-bold">Group Friendly</h3>
-                    <p>Perfect for brunches, late risers, and groups with varying schedules</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="bi bi-star benefit-icon"></i>
-                    <h3 class="h5 fw-bold">Quality Ingredients</h3>
-                    <p>Fresh, high-quality breakfast prepared with the same care all day long</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- ─── SWEET PALM MAIN FEATURE ─── -->
+            <div class="sweet-palm-feature">
+                <span class="badge-label"><i class="bi bi-geo-alt-fill me-1"></i> #1 All Day Breakfast Near Me — King Street, Downtown Charleston</span>
+                <h2>Sweet Palm Coffee — All Day Breakfast, Brunch &amp; Lunch on King Street</h2>
+                <span class="address-line"><i class="bi bi-pin-map-fill me-1"></i> King Street, Downtown Charleston, SC &nbsp;·&nbsp; <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" style="color: var(--blue-light);">sweetpalmcoffee.com</a></span>
 
-    <!-- Restaurants Section -->
-    <section class="restaurant-section">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Top All Day Breakfast Spots</h2>
-                <p>Charleston's finest restaurants serving breakfast all day long</p>
-            </div>
-
-            <!-- Sweet Palm Coffee - Featured -->
-            <div class="restaurant-item featured-spot">
-                <span class="featured-badge">LOCAL FAVORITE</span>
-                <i class="bi bi-sun restaurant-icon"></i>
-                <h3>Sweet Palm Coffee</h3>
-                <p class="mb-3"><strong>Location:</strong> King Street, Downtown Charleston</p>
                 <p>
-                    Located on the vibrant King Street corridor, <a href="https://www.sweetpalmcoffee.com" class="text-white text-decoration-underline" target="_blank" rel="noopener">Sweet Palm Coffee</a> has become a beloved destination for all day breakfast in downtown Charleston. Their commitment to serving breakfast from morning until close sets them apart from traditional cafes. The menu features classic breakfast staples alongside creative variations, all prepared with locally sourced ingredients when possible. From fluffy scrambled eggs and crispy bacon to Belgian waffles and fresh fruit parfaits, every item maintains the same high quality whether you order at 8 AM or 8 PM. The welcoming atmosphere and consistently excellent service make it an ideal spot for both quick breakfast bites and leisurely morning-style meals enjoyed in the afternoon. Their grab and go options also make it convenient for those on the move who still want a quality breakfast experience.
+                    When locals in downtown Charleston search for all day breakfast near them, <strong>Sweet Palm Coffee</strong> is the answer that keeps coming up — and for good reason. This isn't a brunch spot with a two-hour window on Sunday. Sweet Palm serves breakfast all day, every day, alongside a full lunch menu that runs concurrently. You want eggs and a latte at noon? Done. A chicken caesar wrap and a cold brew at 2pm? Also done. That kind of flexibility is rare on King Street and it's exactly what makes Sweet Palm the go-to near me breakfast stop for anyone in downtown Charleston.
                 </p>
-                <a href="https://www.sweetpalmcoffee.com" class="btn cta-button mt-3" target="_blank" rel="noopener">Visit Sweet Palm Coffee</a>
+                <p>
+                    The food quality is what keeps people coming back. Fresh ingredients, made-to-order items, and a menu that covers both the comfort food breakfast classics and lighter brunch-style options. The coffee program is just as serious — proper espresso, excellent lattes, cold brew — so you're not settling for diner coffee alongside your breakfast plate. Everything is done well, and the service moves fast enough that you're not sitting around waiting whether you eat in or take it to go.
+                </p>
+                <p>
+                    Location-wise, it doesn't get more convenient if you're already on King Street or anywhere in the downtown Charleston area. You don't need to drive out of the historic district or cross the peninsula. Sweet Palm is right there, in the middle of everything.
+                </p>
+
+                <div class="mb-4">
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> All-Day Breakfast</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Brunch All Day</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Lunch Menu</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Fresh Pastries</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Grab &amp; Go Friendly</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Artisan Coffee</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> King Street Location</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Near the Market &amp; French Quarter</span>
+                </div>
+
+                <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="visit-btn">
+                    <i class="bi bi-box-arrow-up-right me-2"></i>Visit sweetpalmcoffee.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── MENU HIGHLIGHTS ─── -->
+<section class="menu-section">
+    <div class="container">
+        <h2 class="section-title text-center">What's on the Menu at Sweet Palm Coffee</h2>
+        <div class="section-divider center"></div>
+        <p class="text-center text-muted mb-5" style="max-width:580px; margin: 0 auto 48px;">
+            Breakfast, brunch, and lunch — all day, every day on King Street in downtown Charleston.
+        </p>
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-card">
+                    <i class="bi bi-sunrise menu-icon"></i>
+                    <h3>All-Day Breakfast</h3>
+                    <p>Classic breakfast items served from open to close — no arbitrary cutoff times. Real breakfast food, any time you need it.</p>
+                    <div class="item-list">
+                        <span>Fresh scrambled eggs &amp; egg dishes</span>
+                        <span>Breakfast sandwiches &amp; wraps</span>
+                        <span>Fresh pastries &amp; baked goods</span>
+                        <span>Seasonal breakfast specials</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Toast! -->
-            <div class="restaurant-item">
-                <i class="bi bi-egg-fried restaurant-icon"></i>
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-card">
+                    <i class="bi bi-cup-hot menu-icon"></i>
+                    <h3>Brunch Vibes, No Wait</h3>
+                    <p>Skip the Sunday brunch line. Sweet Palm delivers the same brunch-quality food without the hour-long hold on weekends.</p>
+                    <div class="item-list">
+                        <span>Brunch-style plates served daily</span>
+                        <span>Light fresh options alongside hearty plates</span>
+                        <span>Excellent lattes &amp; specialty coffee drinks</span>
+                        <span>No reservation needed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-card">
+                    <i class="bi bi-sandwich menu-icon"></i>
+                    <h3>Lunch All Day</h3>
+                    <p>A full lunch menu runs alongside breakfast — so you can mix and match or just grab a solid lunch without hunting for a second spot.</p>
+                    <div class="item-list">
+                        <span>Chicken Caesar wrap (fan favorite)</span>
+                        <span>Fresh sandwiches &amp; wraps</span>
+                        <span>Salads &amp; lighter lunch options</span>
+                        <span>Grab and go ready</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-card">
+                    <i class="bi bi-cup-straw menu-icon"></i>
+                    <h3>Coffee &amp; Drinks</h3>
+                    <p>Every food order pairs with a full coffee program — this isn't an afterthought espresso machine. It's a real cafe with serious drinks.</p>
+                    <div class="item-list">
+                        <span>Expertly pulled espresso</span>
+                        <span>Handcrafted lattes (hot &amp; iced)</span>
+                        <span>Cold brew &amp; nitro options</span>
+                        <span>Seasonal specialty drinks</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-card">
+                    <i class="bi bi-bag menu-icon"></i>
+                    <h3>Grab &amp; Go Ready</h3>
+                    <p>Everything on the menu is built to eat in or take with you. Perfect for exploring King Street, heading to the beach, or getting back to work.</p>
+                    <div class="item-list">
+                        <span>Fast counter service</span>
+                        <span>Packaged pastries &amp; baked goods</span>
+                        <span>Drinks in hand in minutes</span>
+                        <span>No table required</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-card">
+                    <i class="bi bi-geo-alt menu-icon"></i>
+                    <h3>Right on King Street</h3>
+                    <p>As close to "near me" as it gets if you're anywhere in downtown Charleston — no driving to the suburbs for a decent breakfast.</p>
+                    <div class="item-list">
+                        <span>King Street, downtown Charleston</span>
+                        <span>Walking distance from the Market</span>
+                        <span>Near the French Quarter</span>
+                        <span>Easy to find, easy to park nearby</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener"
+                style="background: var(--blue-main); color: #fff; padding: 14px 40px; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.25s ease; box-shadow: 0 4px 18px rgba(26,86,160,0.3);">
+                <i class="bi bi-egg-fried me-2"></i>See the Full Menu at sweetpalmcoffee.com
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── OTHER ALL DAY BREAKFAST SPOTS ─── -->
+<section class="other-section">
+    <div class="container">
+        <div class="col-lg-10 mx-auto">
+            <h2 class="section-title mb-2">Other All Day Breakfast Spots Near Downtown Charleston</h2>
+            <div class="section-divider"></div>
+            <p class="intro-text mb-4">
+                Sweet Palm is our top pick for all day breakfast near you on King Street, but here's a look at other spots in and around the downtown Charleston area worth knowing about.
+            </p>
+
+            <div class="other-card">
                 <h3>Toast! All Day</h3>
-                <p class="mb-3"><strong>Location:</strong> Cannon Street, Downtown</p>
-                <p>
-                    True to its name, Toast! specializes in all day breakfast with a menu that celebrates morning classics with creative twists. Their extensive breakfast offerings include everything from traditional eggs benedict to innovative breakfast tacos and grain bowls. The casual, contemporary atmosphere appeals to both families and young professionals seeking quality breakfast fare beyond traditional morning hours.
-                </p>
+                <span class="loc"><i class="bi bi-geo-alt me-1"></i>Cannon Street, Downtown Charleston</span>
+                <p>Toast! runs a dedicated all day breakfast and brunch menu with a creative spin on classics — eggs benedict variations, breakfast tacos, grain bowls. A solid option when you want something a little more sit-down and leisurely.</p>
             </div>
 
-            <!-- Millers All Day -->
-            <div class="restaurant-item">
-                <i class="bi bi-cup-hot restaurant-icon"></i>
+            <div class="other-card">
                 <h3>Millers All Day</h3>
-                <p class="mb-3"><strong>Location:</strong> Spring Street, Downtown</p>
-                <p>
-                    Millers All Day lives up to its name with a comprehensive breakfast menu available throughout their operating hours. Known for generous portions and Southern hospitality, this local favorite serves up everything from buttermilk pancakes to shrimp and grits. Their commitment to quality ingredients and scratch cooking ensures every breakfast plate meets high standards regardless of when you order.
-                </p>
+                <span class="loc"><i class="bi bi-geo-alt me-1"></i>Spring Street, Downtown Charleston</span>
+                <p>Millers leans into Southern comfort — buttermilk pancakes, shrimp and grits, generous portions. Popular spot near downtown for a proper breakfast any time of day, though expect a wait on weekends.</p>
             </div>
 
-            <!-- Basic Kitchen -->
-            <div class="restaurant-item">
-                <i class="bi bi-brightness-high restaurant-icon"></i>
+            <div class="other-card">
                 <h3>Basic Kitchen</h3>
-                <p class="mb-3"><strong>Location:</strong> Upper King Street</p>
-                <p>
-                    Basic Kitchen offers an all day breakfast menu that emphasizes fresh, wholesome ingredients. Their breakfast selections range from hearty omelets to lighter options like avocado toast and acai bowls. The bright, modern space and health-conscious menu appeal to those seeking nutritious breakfast choices available beyond morning hours.
-                </p>
+                <span class="loc"><i class="bi bi-geo-alt me-1"></i>Upper King Street, Downtown</span>
+                <p>Health-focused all day breakfast with avocado toast, acai bowls, and lighter egg dishes. Good option if you want something nutritious without driving away from the King Street area.</p>
             </div>
 
-            <!-- Hominy Grill -->
-            <div class="restaurant-item">
-                <i class="bi bi-house restaurant-icon"></i>
+            <div class="other-card">
                 <h3>Hominy Grill</h3>
-                <p class="mb-3"><strong>Location:</strong> Rutledge Avenue (Near Downtown)</p>
-                <p>
-                    A Charleston institution, Hominy Grill serves breakfast all day with a focus on Lowcountry classics. Their famous shrimp and grits, biscuits with sausage gravy, and country-style breakfast platters showcase authentic Southern cooking. The charming, cozy atmosphere adds to the appeal of enjoying breakfast favorites at any hour.
-                </p>
-            </div>
-
-            <!-- Page's Okra Grill -->
-            <div class="restaurant-item">
-                <i class="bi bi-basket restaurant-icon"></i>
-                <h3>Page's Okra Grill</h3>
-                <p class="mb-3"><strong>Location:</strong> Folly Road (Short drive from downtown)</p>
-                <p>
-                    Page's Okra Grill brings Southern comfort to all day breakfast with generous portions and authentic Lowcountry flavors. Their breakfast menu includes traditional favorites like country ham with red eye gravy, fried chicken and waffles, and various egg platters. The down-home atmosphere and reasonable prices make it a local favorite for breakfast at any time.
-                </p>
+                <span class="loc"><i class="bi bi-geo-alt me-1"></i>Rutledge Avenue, Near Downtown</span>
+                <p>A Charleston institution for Lowcountry breakfast classics — shrimp and grits, biscuits with sausage gravy, country breakfast platters. Slightly off King Street but worth the short walk for a classic Charleston breakfast experience.</p>
             </div>
 
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="display-5 fw-bold mb-4">Ready for Breakfast Anytime?</h2>
-                    <p class="lead mb-4">Discover why Charleston's all day breakfast scene is the perfect blend of Southern tradition and modern convenience. Start your culinary adventure on King Street today.</p>
-                    <a href="https://www.sweetpalmcoffee.com" class="btn cta-button btn-lg" target="_blank" rel="noopener">Explore Sweet Palm Coffee</a>
+<!-- ─── WHY SWEET PALM WINS ─── -->
+<section class="why-section">
+    <div class="container">
+        <div class="col-lg-10 mx-auto">
+            <h2 class="section-title mb-2">Why Sweet Palm Coffee Is the Best "Near Me" Breakfast in Downtown Charleston</h2>
+            <div class="section-divider" style="background: var(--blue-light);"></div>
+            <p>
+                When you search for all day breakfast near you in downtown Charleston, you want something that's actually close, actually good, and actually open when you want to eat. Sweet Palm Coffee checks all three boxes in a way that most spots around King Street don't. No limited brunch window, no "breakfast ends at 11" policy, no mediocre food to go with decent coffee. It's a full breakfast and lunch operation running out of one of the best cafe spaces on the King Street corridor.
+            </p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="bi bi-clock-fill"></i>
+                    <h4>All Day, Every Day</h4>
+                    <p>Breakfast and lunch on the menu from open to close — no time restrictions.</p>
+                </div>
+                <div class="why-card">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <h4>King Street Location</h4>
+                    <p>Right in the heart of downtown Charleston — walkable from nearly everywhere in the historic district.</p>
+                </div>
+                <div class="why-card">
+                    <i class="bi bi-lightning-fill"></i>
+                    <h4>Fast Service</h4>
+                    <p>Built for grab and go — eat in or take it with you without a long wait.</p>
+                </div>
+                <div class="why-card">
+                    <i class="bi bi-star-fill"></i>
+                    <h4>Real Quality</h4>
+                    <p>Fresh food, proper espresso, and consistent execution across the whole menu.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Hungry? Sweet Palm Coffee Is Right There on King Street.</h2>
+        <p>
+            Stop searching for all day breakfast near you in downtown Charleston. Sweet Palm Coffee on King Street has breakfast, brunch, and lunch ready for you right now — eat in or grab it and go. Best decision you'll make today.
+        </p>
+        <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="main-cta">
+            <i class="bi bi-egg-fried me-2"></i>Visit sweetpalmcoffee.com
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p class="mb-0">&copy; 2025 Charleston Eats · All Day Breakfast Near Me Downtown Charleston SC · King Street</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

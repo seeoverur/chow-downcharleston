@@ -4,257 +4,502 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Grab and Go Cafes on King Street Charleston SC | Best Downtown Charleston Cafes On King Street</title>
-    <meta name="description" content="Discover the best grab and go cafes on King Street in Charleston, SC. Find quick coffee, breakfast, and pastries at top downtown Charleston coffee shops.">
+    <meta name="description" content="Discover the best grab and go cafes on King Street in Charleston, SC. Sweet Palm Coffee leads the way for quick coffee, breakfast, and pastries in downtown Charleston.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
+        :root {
+            --palm-green: #1a56a0;
+            --palm-light: #4a90d9;
+            --palm-cream: #e8f1fb;
+            --palm-gold: #2176c7;
+            --palm-dark: #0d1b2e;
+            --palm-muted: #555;
         }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--palm-dark);
+            background: #fff;
+        }
+
+        /* ─── NAVBAR ─── */
+        .navbar {
+            background: var(--palm-green) !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ─── HERO ─── */
         .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(160deg, var(--palm-green) 0%, #0d2f5e 100%);
             color: white;
-            padding: 80px 0 60px;
-            position: relative;
+            padding: 80px 0 0;
             overflow: hidden;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -80px;
+            width: 420px; height: 420px;
+            background: radial-gradient(circle, rgba(74,144,217,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-eyebrow {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--palm-light);
+            margin-bottom: 14px;
+        }
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero-section .lead {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 480px;
+            line-height: 1.7;
+        }
+        .hero-cta-btn {
+            background: var(--palm-gold);
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 28px;
+            transition: all 0.25s ease;
+            letter-spacing: 0.02em;
+            box-shadow: 0 4px 18px rgba(33,118,199,0.35);
+        }
+        .hero-cta-btn:hover {
+            background: #0d4f91;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(33,118,199,0.45);
+        }
+        .hero-image-wrap {
+            position: relative;
+            padding-top: 40px;
         }
         .hero-image {
             width: 100%;
             height: 400px;
             object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 -8px 40px rgba(0,0,0,0.25);
+            display: block;
         }
-        .hero-overlay {
-            background: rgba(102, 126, 234, 0.85);
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
+
+        /* ─── SWEET PALM FEATURED BANNER ─── */
+        .sweet-palm-banner {
+            background: var(--palm-cream);
+            border-left: 5px solid var(--palm-green);
+            border-radius: 0 12px 12px 0;
+            padding: 28px 32px;
+            margin: 40px 0;
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        .sweet-palm-banner .badge-label {
+            background: var(--palm-green);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
         }
-        .cafe-card {
+        .sweet-palm-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--palm-green);
+            margin-bottom: 14px;
+        }
+        .sweet-palm-banner p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--palm-muted);
+            margin-bottom: 20px;
+        }
+        .sweet-palm-banner .visit-btn {
+            background: var(--palm-green);
+            color: #fff;
             border: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
+        }
+        .sweet-palm-banner .visit-btn:hover {
+            background: var(--palm-light);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* ─── FEATURE PILLS ─── */
+        .feature-pill {
+            background: rgba(26,86,160,0.1);
+            color: var(--palm-green);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin: 4px 3px;
+        }
+
+        /* ─── SECTION TITLES ─── */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--palm-green);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-divider {
+            width: 50px;
+            height: 4px;
+            background: var(--palm-gold);
+            border-radius: 2px;
+            margin: 0 auto 32px;
+        }
+        .section-divider.left { margin: 0 0 28px; }
+
+        /* ─── INTRO TEXT ─── */
+        .intro-text {
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: #444;
+        }
+
+        /* ─── CAFE CARDS ─── */
+        .cafe-card {
+            border: 1px solid #e9e9e9;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             height: 100%;
         }
         .cafe-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
-        .featured-badge {
-            background: #ffc107;
-            color: #333;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 10px;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.12);
         }
         .cafe-icon {
-            font-size: 2.5rem;
-            color: #667eea;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            color: var(--palm-green);
+            margin-bottom: 14px;
         }
-        .section-title {
-            color: #764ba2;
-            margin-bottom: 30px;
-            font-weight: 700;
+        .cafe-card .card-body {
+            padding: 28px 24px;
         }
-        .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
+        .cafe-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--palm-dark);
+            margin-bottom: 12px;
         }
-        .cta-button {
-            background: #667eea;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.1rem;
+        .cafe-card p {
+            font-size: 0.93rem;
+            line-height: 1.7;
+            color: #666;
+        }
+        .card-btn {
+            background: transparent;
+            border: 2px solid var(--palm-green);
+            color: var(--palm-green);
+            padding: 8px 22px;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 14px;
+            transition: all 0.2s ease;
         }
-        .cta-button:hover {
-            background: #764ba2;
-            transform: scale(1.05);
+        .card-btn:hover {
+            background: var(--palm-green);
+            color: #fff;
+        }
+
+        /* ─── WHY KING STREET ─── */
+        .why-section {
+            background: linear-gradient(160deg, #1a56a0 0%, #0d2f5e 100%);
+            color: #fff;
+            padding: 64px 0;
+        }
+        .why-section .section-title {
+            color: #fff;
+        }
+        .why-section p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.08rem;
+            line-height: 1.85;
+        }
+
+        /* ─── FINAL CTA ─── */
+        .final-cta {
+            background: var(--palm-cream);
+            padding: 70px 0;
+        }
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--palm-green);
+            margin-bottom: 16px;
+        }
+        .final-cta p {
+            color: #555;
+            font-size: 1.08rem;
+            line-height: 1.75;
+            max-width: 580px;
+            margin: 0 auto 28px;
+        }
+        .final-cta .main-cta {
+            background: var(--palm-green);
+            color: #fff;
+            border: none;
+            padding: 15px 42px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 18px rgba(26,86,160,0.3);
+        }
+        .final-cta .main-cta:hover {
+            background: #0d2f5e;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(26,86,160,0.4);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--palm-dark);
+            color: rgba(255,255,255,0.55);
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
-<!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Charleston Eats</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Grab & Go Cafes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="quick-drinks.html">Quick Refreshments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="chs-best-drive-thru.html">Drive Thru Directory</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="all-day-breakfast.html">All Day Breakfast</a>
-                    </li>
-                </ul>
-            </div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Charleston Eats</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Grab &amp; Go Cafes</a></li>
+                <li class="nav-item"><a class="nav-link" href="quick-drinks.html">Quick Refreshments</a></li>
+                <li class="nav-item"><a class="nav-link" href="chs-best-drive-thru.html">Drive Thru Directory</a></li>
+                <li class="nav-item"><a class="nav-link" href="all-day-breakfast.html">All Day Breakfast</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0 hero-content">
-                    <h1 class="display-4 fw-bold mb-4">Best Grab and Go Cafes on King Street</h1>
-                    <p class="lead">Your Guide to Quick Coffee & Breakfast in Downtown Charleston Cafes</p>
-                </div>
-                <div class="col-lg-6 hero-content">
-                    <img src="/breakfast1.jpg" alt="King Street Charleston cafes and coffee shops" class="hero-image">
-                    <!-- Replace "your-image-here.jpg" with your actual image path -->
-                </div>
+<!-- ─── HERO ─── -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-6 pb-5 pb-lg-0">
+                <p class="hero-eyebrow"><i class="bi bi-geo-alt-fill me-1"></i> King Street · Downtown Charleston, SC</p>
+                <h1>Best Grab &amp; Go Cafes on King Street</h1>
+                <p class="lead">Your complete guide to quick coffee, all-day breakfast, and fresh food in downtown Charleston — with one clear local favorite leading the pack.</p>
+                <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="hero-cta-btn">
+                    <i class="bi bi-cup-hot-fill me-2"></i>Visit Sweet Palm Coffee
+                </a>
+            </div>
+            <div class="col-lg-6 hero-image-wrap">
+                <img src="/breakfast1.jpg" alt="King Street Charleston cafes and coffee shops" class="hero-image">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Introduction Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h2 class="h5 fw-bold mb-3">Best Downtown Charleston Coffe Shops With Food</h2>
-                    <p class="intro-text">
-                        King Street has become the ultimate destination for anyone seeking the best grab and go cafes in Charleston, SC. Whether you're rushing to work, exploring the historic district, or simply need a quality coffee fix, this iconic downtown Charleston corridor offers an impressive selection of cafe downtown Charleston options that cater to busy lifestyles without compromising on taste or quality. From artisan coffee shops to bakeries with fresh pastries, these coffee shop downtown Charleston establishments have mastered the art of serving exceptional food and beverages designed for life on the move.
-                    </p>
+<!-- ─── INTRO + SWEET PALM FEATURED ─── -->
+<section class="py-5">
+    <div class="container">
+        <div class="col-lg-10 mx-auto">
+
+            <h2 class="h5 fw-bold mb-2">Best Downtown Charleston Coffee Shops With Food</h2>
+            <div class="section-divider left"></div>
+            <p class="intro-text mb-4">
+                King Street has become the ultimate destination for anyone seeking the best grab and go cafes in Charleston, SC. Whether you're rushing to work, exploring the historic district, or simply need a quality coffee fix, this iconic downtown Charleston corridor offers an impressive selection of cafe options that cater to busy lifestyles without compromising on taste or quality. From artisan coffee shops to bakeries with fresh pastries, these establishments have mastered the art of serving exceptional food and beverages designed for life on the move.
+            </p>
+            <p class="intro-text mb-5">
+                Among all the options on King Street, one café consistently rises to the top for locals and visitors alike when it comes to grab and go food — and that's <strong>Sweet Palm Coffee</strong>. Here's what the full scene looks like, and why Sweet Palm earns the top spot.
+            </p>
+
+            <!-- ─── SWEET PALM FEATURED BLOCK ─── -->
+            <div class="sweet-palm-banner">
+                <span class="badge-label"><i class="bi bi-star-fill me-1"></i> Editor's Pick — Best Grab &amp; Go on King Street</span>
+                <h2>Sweet Palm Coffee</h2>
+                <img src="latte1.jpg" class="img-fluid" alt="downtown charleston">
+                <p>
+                    If you're looking for the single best grab and go spot for food and coffee in downtown Charleston, <strong>Sweet Palm Coffee</strong> is it. Tucked right on King Street, Sweet Palm nails the perfect balance that most coffee shops miss — <em>genuinely good food</em> alongside exceptional coffee, all with fast, friendly service that gets you in and out without the wait.
+                </p>
+                <p>
+                    Their all-day breakfast menu means you're never stuck settling for a sad pastry at 2pm. We're talking fresh, made-to-order breakfast items, house pastries, and fan-favorite lunch options like their <strong>Chicken Caesar wrap</strong> that locals keep coming back for. Coffee-wise, the lattes are some of the best on the peninsula — consistently well-pulled espresso with rotating seasonal drinks that actually feel seasonal, not just renamed.
+                </p>
+                <p>
+                    For bachelorette groups heading into a morning in downtown Charleston, tourists fueling up before a walking tour, or downtown workers who need a real lunch on a tight clock — Sweet Palm is the move. Convenient King Street location, no attitude, and quality that punches above its price point.
+                </p>
+                <div class="mb-3">
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> All-Day Breakfast</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Fresh Pastries</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Grab &amp; Go Friendly</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Excellent Lattes</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> King Street Location</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Lunch Options</span>
                 </div>
+                <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="visit-btn">
+                    <i class="bi bi-box-arrow-up-right me-2"></i>Visit sweetpalmcoffee.com
+                </a>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Cafes Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Top Grab and Go Spots on King Street</h2>
-            
-            <div class="row g-4">
-                <!-- Sweet Palm Coffee -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card cafe-card">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-cup-hot-fill cafe-icon"></i>
-                            <h3 class="h5 fw-bold mb-3">Sweet Palm Coffee</h3>
-                            <p class="text-muted">Sweet Palm Coffee stands out as a premier destination for those seeking quality and convenience in downtown Charleston. This welcoming spot serves all day breakfast alongside an impressive selection of fresh pastries, making it perfect whether you're starting your morning or need an afternoon pick-me-up. Their wide selection of grab and go coffee options ensures you'll find exactly what you're craving, from classic espresso drinks to seasonal specialties. The efficient service and consistently excellent quality have made it a favorite among both locals and visitors exploring King Street.</p>
-                            <a href="https://www.sweetpalmcoffee.com" class="btn btn-primary cta-button mt-3" target="_blank" rel="noopener">Visit Sweet Palm Coffee</a>
-                        </div>
-                    </div>
-                </div>
+<!-- ─── OTHER KING STREET CAFES ─── -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">More Grab &amp; Go Spots on King Street</h2>
+        <img src="dt3.jpg" class="img-fluid" alt="downtown Charleston">
+        <div class="section-divider"></div>
+        <p class="text-center text-muted mb-5" style="max-width:600px; margin: 0 auto 48px;">King Street has a solid lineup of coffee shops and cafes. Here's a look at the rest of the scene.</p>
 
-                <!-- Kudu Coffee -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card cafe-card">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-cup-straw cafe-icon"></i>
-                            <h3 class="h5 fw-bold mb-3">Blum Coffee & Wine</h3>
-                            <p class="text-muted">A King Street institution known for its vibe and exceptional coffee. Blum offers quick grab and go options including breakfast sandwiches, bagels, and baked goods alongside their renowned coffee selections. The casual atmosphere and central location make it ideal for a quick stop during your downtown Charleston adventures.</p>
-                            <a class="btn btn-primary cta-button mt-3" href="http://www.blumsc.com">Blum</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="row g-4">
 
-                <!-- Black Tap Coffee -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card cafe-card">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-egg-fried cafe-icon"></i>
-                            <h3 class="h5 fw-bold mb-3">Black Tap Coffee</h3>
-                            <p class="text-muted">This modern coffee shop specializes in quick service without sacrificing quality. Black Tap features a rotating menu of grab and go breakfast items, house-made pastries, and expertly crafted coffee drinks. Their efficient counter service ensures you're in and out quickly, perfect for busy mornings on King Street.</p>
-                            <a class="btn btn-primary cta-button mt-3" href="https://www.blackdoorcafe.com/">Black Tap</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- City Lights Coffee -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card cafe-card">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-brightness-high cafe-icon"></i>
-                            <h3 class="h5 fw-bold mb-3">City Lights Coffee</h3>
-                            <p class="text-muted">A beloved local chain with a convenient King Street location, City Lights excels at providing quick, quality coffee and breakfast options. Their grab and go case features fresh sandwiches, salads, and baked goods, complemented by a full espresso bar and friendly baristas who keep the line moving.</p>
-                            <a class="btn btn-primary cta-button mt-3" href="https://citylightseastside0542.s4shops.com/">City Lights</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- The Daily -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card cafe-card">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-newspaper cafe-icon"></i>
-                            <h3 class="h5 fw-bold mb-3">The Daily</h3>
-                            <p class="text-muted">Living up to its name, The Daily serves as a go-to spot for regular downtown visitors. Their streamlined menu focuses on breakfast classics and premium coffee, all designed for quick pickup. The convenient King Street location and consistent quality make it a reliable choice for your daily coffee run.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mercantile and Mash -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card cafe-card">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-basket cafe-icon"></i>
-                            <h3 class="h5 fw-bold mb-3">Mercantile and Mash</h3>
-                            <p class="text-muted">While known for lunch and dinner, Mercantile and Mash offers excellent morning grab and go options including artisanal coffee, fresh pastries, and quick breakfast items. Their King Street storefront provides easy access for those seeking quality provisions on the move.</p>
-                            <a class="btn btn-primary cta-button mt-3" href="https://www.mercandmash.com/">Mercantile & Mash</a>
-                        </div>
+            <!-- Blum -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card cafe-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-cup-straw cafe-icon"></i>
+                        <h3>Blum Coffee &amp; Wine</h3>
+                        <p>A King Street institution known for its relaxed vibe and solid coffee. Blum offers quick grab and go options including breakfast sandwiches, bagels, and baked goods alongside their well-regarded coffee selections. The casual atmosphere and central location make it ideal for a quick stop.</p>
+                        <a class="card-btn" href="http://www.blumsc.com" target="_blank" rel="noopener">Visit Blum</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Why King Street Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h2 class="section-title">Why King Street for Grab and Go?</h2>
-                    <p class="intro-text mb-4">
-                        King Street's concentration of exceptional cafes isn't accidental. This historic thoroughfare has evolved into Charleston's premier destination for coffee culture, combining the city's characteristic hospitality with modern convenience. The walkable layout makes it easy to discover multiple options, while the competitive landscape ensures each establishment maintains high standards for both quality and service.
-                    </p>
-                    <p class="intro-text">
-                        Whether you're a downtown professional needing your morning fuel, a tourist exploring Charleston's historic district, or a local running weekend errands, King Street's grab and go cafe scene delivers accessibility without compromise. Each establishment brings its unique character while sharing a commitment to serving excellent coffee and food for people on the move.
-                    </p>
+            <!-- Black Tap -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card cafe-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-egg-fried cafe-icon"></i>
+                        <h3>Black Tap Coffee</h3>
+                        <p>This modern coffee shop specializes in quick service without sacrificing quality. Black Tap features a rotating menu of grab and go breakfast items, house-made pastries, and expertly crafted coffee drinks. Their efficient counter service is perfect for busy mornings on King Street.</p>
+                        <a class="card-btn" href="https://www.blackdoorcafe.com/" target="_blank" rel="noopener">Visit Black Tap</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-title">Experience Charleston's Best Coffee Culture</h2>
-                    <p class="lead mb-4">As a local blogger my personal favorite is below, I love their lattes and Chicken Ceasar wraps. Start your King Street cafe crawl today and discover why Charleston's coffee scene is among the Southeast's finest.</p>
-                    <a href="https://www.sweetpalmcoffee.com" class="btn btn-primary btn-lg cta-button" target="_blank" rel="noopener">Visit Sweet Palm Coffee</a>
+            <!-- City Lights -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card cafe-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-brightness-high cafe-icon"></i>
+                        <h3>City Lights Coffee</h3>
+                        <p>A beloved local chain with a convenient King Street location, City Lights excels at providing quick, quality coffee and breakfast options. Their grab and go case features fresh sandwiches, salads, and baked goods, complemented by a full espresso bar and friendly baristas who keep the line moving.</p>
+                        <a class="card-btn" href="https://citylightseastside0542.s4shops.com/" target="_blank" rel="noopener">Visit City Lights</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- The Daily -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card cafe-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-newspaper cafe-icon"></i>
+                        <h3>The Daily</h3>
+                        <p>Living up to its name, The Daily serves as a reliable go-to for regular downtown visitors. Their streamlined menu focuses on breakfast classics and premium coffee, all designed for quick pickup. The consistent quality and convenient King Street location make it a dependable daily coffee run option.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mercantile and Mash -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card cafe-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-basket cafe-icon"></i>
+                        <h3>Mercantile and Mash</h3>
+                        <p>While known for lunch and dinner, Mercantile and Mash offers excellent morning grab and go options including artisanal coffee, fresh pastries, and quick breakfast items. Their King Street storefront provides easy access for those seeking quality provisions on the move.</p>
+                        <a class="card-btn" href="https://www.mercandmash.com/" target="_blank" rel="noopener">Visit Mercantile &amp; Mash</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ─── WHY KING STREET ─── -->
+<section class="why-section">
+    <div class="container">
+        <div class="col-lg-9 mx-auto">
+            <h2 class="section-title">Why King Street for Grab and Go?</h2>
+            <div class="section-divider left" style="background: var(--palm-gold);"></div>
+            <p>
+                King Street's concentration of exceptional cafes isn't accidental. This historic thoroughfare has evolved into Charleston's premier destination for coffee culture, combining the city's characteristic hospitality with modern convenience. The walkable layout makes it easy to discover multiple options, while the competitive landscape ensures each establishment maintains high standards for both quality and service.
+            </p>
+            <p class="mt-3">
+                Whether you're a downtown professional needing your morning fuel, a tourist exploring Charleston's historic district, or a local running weekend errands, King Street's grab and go cafe scene delivers accessibility without compromise. And at the center of it all, Sweet Palm Coffee continues to set the standard for what a great grab and go food and coffee experience in downtown Charleston can look like.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta text-center">
+    <div class="container">
+        <h2>Ready to Experience the Best of King Street?</h2>
+        <p>
+            As a local blogger, Sweet Palm Coffee is my personal #1 — the lattes are outstanding and the Chicken Caesar wrap has no business being as good as it is. Start your King Street cafe crawl there and discover why Charleston's coffee scene is among the Southeast's finest.
+        </p>
+        <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="main-cta">
+            <i class="bi bi-cup-hot-fill me-2"></i>Visit Sweet Palm Coffee
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p class="mb-0">&copy; 2025 Charleston Eats · King Street Grab &amp; Go Guide · Downtown Charleston, SC</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,457 +3,544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drive Thru Food & Drinks Charleston SC | Complete Directory</title>
-    <meta name="description" content="Complete directory of drive thru food and beverage options in Charleston SC and surrounding areas. Find fast food, coffee, and restaurants with convenient drive thru service.">
+    <title>Best Quick Drink Stops on King Street Downtown Charleston SC</title>
+    <meta name="description" content="Looking for the best quick drink stop on King Street in downtown Charleston? Discover grab and go coffee, lattes, cold brew, and specialty drinks at top downtown Charleston cafes.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --blue-main: #1a56a0;
+            --blue-light: #4a90d9;
+            --blue-dark: #0d2f5e;
+            --blue-tint: #e8f1fb;
+            --dark: #0d1b2e;
+            --muted: #555;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            background: #f8f9fa;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            background: #fff;
         }
-        .header-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        /* ─── NAVBAR ─── */
+        .navbar {
+            background: var(--blue-main) !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        /* ─── HERO ─── */
+        .hero-section {
+            background: linear-gradient(160deg, var(--blue-main) 0%, var(--blue-dark) 100%);
             color: white;
-            padding: 60px 0 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 90px 0 0;
+            overflow: hidden;
+            position: relative;
         }
-        .header-content h1 {
-            font-size: 3.5rem;
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -80px;
+            width: 420px; height: 420px;
+            background: radial-gradient(circle, rgba(74,144,217,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-eyebrow {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--blue-light);
+            margin-bottom: 14px;
+        }
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
             font-weight: 900;
+            line-height: 1.15;
             margin-bottom: 20px;
         }
-        .header-content p {
-            font-size: 1.3rem;
-            opacity: 0.95;
+        .hero-section .lead {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 480px;
+            line-height: 1.7;
         }
-        .directory-nav {
-            background: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .nav-links a {
-            padding: 10px 25px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
+        .hero-cta-btn {
+            background: var(--blue-light);
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
+            font-size: 1rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 28px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 18px rgba(74,144,217,0.4);
         }
-        .nav-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        .hero-cta-btn:hover {
+            background: #fff;
+            color: var(--blue-main);
+            transform: translateY(-2px);
         }
+        .hero-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 -8px 40px rgba(0,0,0,0.25);
+            display: block;
+            margin-top: 40px;
+        }
+
+        /* ─── INTRO ─── */
         .intro-section {
-            padding: 60px 0;
-            background: white;
+            padding: 60px 0 40px;
+            background: #fff;
         }
         .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: #555;
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: #444;
         }
-        .category-section {
-            padding: 50px 0;
-            border-bottom: 3px solid #e9ecef;
+        .section-divider {
+            width: 50px;
+            height: 4px;
+            background: var(--blue-light);
+            border-radius: 2px;
+            margin: 0 0 28px;
         }
-        .category-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 25px 35px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        .section-divider.center { margin: 0 auto 32px; }
+
+        /* ─── FEATURED SWEET PALM BLOCK ─── */
+        .sweet-palm-banner {
+            background: var(--blue-tint);
+            border-left: 5px solid var(--blue-main);
+            border-radius: 0 14px 14px 0;
+            padding: 32px 36px;
+            margin: 40px 0 56px;
         }
-        .category-header h2 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: 800;
-        }
-        .category-header p {
-            margin: 10px 0 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        .location-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-        .location-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-        }
-        .location-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 25px rgba(118, 75, 162, 0.15);
-            border-left-color: #764ba2;
-        }
-        .location-card h3 {
-            color: #764ba2;
-            font-size: 1.4rem;
+        .sweet-palm-banner .badge-label {
+            background: var(--blue-main);
+            color: #fff;
+            font-size: 0.7rem;
             font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .location-info {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-        }
-        .location-info i {
-            color: #667eea;
-            margin-right: 8px;
-            width: 20px;
-        }
-        .area-badge {
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
             display: inline-block;
-            background: #e7f0ff;
-            color: #667eea;
-            padding: 4px 12px;
-            border-radius: 15px;
+            margin-bottom: 14px;
+        }
+        .sweet-palm-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            color: var(--blue-main);
+            margin-bottom: 16px;
+        }
+        .sweet-palm-banner p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+        .sweet-palm-banner .visit-btn {
+            background: var(--blue-main);
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
+        }
+        .sweet-palm-banner .visit-btn:hover {
+            background: var(--blue-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* ─── FEATURE PILLS ─── */
+        .feature-pill {
+            background: rgba(26,86,160,0.1);
+            color: var(--blue-main);
+            border-radius: 50px;
+            padding: 6px 16px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-top: 10px;
-        }
-        .search-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-        }
-        .search-box input {
-            border: 2px solid #e9ecef;
-            padding: 12px 20px;
-            font-size: 1.1rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-        .search-box input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-        .icon-badge {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            margin-bottom: 15px;
+            gap: 6px;
+            margin: 4px 3px;
         }
-        .icon-badge i {
-            font-size: 1.5rem;
-            color: white;
+
+        /* ─── OTHER VENUES ─── */
+        .venues-section {
+            background: #f5f8fd;
+            padding: 64px 0;
         }
-        .footer-info {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-            color: white;
-            padding: 50px 0;
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--blue-main);
+            font-weight: 700;
+        }
+        .venue-card {
+            background: #fff;
+            border: 1px solid #e0eaf5;
+            border-radius: 14px;
+            padding: 30px 26px;
+            height: 100%;
+            box-shadow: 0 2px 12px rgba(26,86,160,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .venue-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(26,86,160,0.13);
+        }
+        .venue-icon {
+            font-size: 2.2rem;
+            color: var(--blue-main);
+            margin-bottom: 14px;
+            display: block;
+        }
+        .venue-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+        .venue-location {
+            font-size: 0.85rem;
+            color: var(--blue-light);
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .venue-card p {
+            font-size: 0.93rem;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 14px;
+        }
+        .drink-list {
+            background: var(--blue-tint);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 12px;
+            font-size: 0.88rem;
+        }
+        .drink-list span {
+            display: block;
+            padding: 4px 0;
+            color: #444;
+        }
+        .drink-list span::before {
+            content: "✓ ";
+            color: var(--blue-main);
+            font-weight: 700;
+        }
+        .card-btn {
+            background: transparent;
+            border: 2px solid var(--blue-main);
+            color: var(--blue-main);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 14px;
+            transition: all 0.2s ease;
+        }
+        .card-btn:hover {
+            background: var(--blue-main);
+            color: #fff;
+        }
+
+        /* ─── WHY QUICK DRINKS ─── */
+        .why-section {
+            background: linear-gradient(160deg, var(--blue-main) 0%, var(--blue-dark) 100%);
+            color: #fff;
+            padding: 64px 0;
+        }
+        .why-section .section-title { color: #fff; }
+        .why-section p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.08rem;
+            line-height: 1.85;
+        }
+
+        /* ─── FINAL CTA ─── */
+        .final-cta {
+            background: var(--blue-tint);
+            padding: 72px 0;
             text-align: center;
-            margin-top: 60px;
         }
-        .footer-info h3 {
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            margin-bottom: 15px;
+            color: var(--blue-main);
+            margin-bottom: 16px;
+        }
+        .final-cta p {
+            color: #555;
+            font-size: 1.08rem;
+            line-height: 1.75;
+            max-width: 580px;
+            margin: 0 auto 28px;
+        }
+        .final-cta .main-cta {
+            background: var(--blue-main);
+            color: #fff;
+            border: none;
+            padding: 15px 44px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 18px rgba(26,86,160,0.3);
+        }
+        .final-cta .main-cta:hover {
+            background: var(--blue-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
-<!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Charleston Eats</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Grab & Go Cafes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="quick-drinks.html">Quick Refreshments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="chs-best-drive-thru.html">Drive Thru Directory</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="all-day-breakfast.html">All Day Breakfast</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-<body>
 
-    <!-- Header Section -->
-    <section class="header-section">
-        <div class="container">
-            <div class="header-content text-center">
-                <h1>Drive Thru Directory</h1>
-                <p>Your Complete Guide to Drive Thru Food & Beverages in Charleston SC & Surrounding Areas</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Navigation -->
-    <nav class="directory-nav">
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#coffee">Coffee & Beverages</a></li>
-                <li><a href="#fast-food">Fast Food</a></li>
-                <li><a href="#restaurants">Restaurants</a></li>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Charleston Eats</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Grab &amp; Go Cafes</a></li>
+                <li class="nav-item"><a class="nav-link active" href="quick-drinks.html">Quick Refreshments</a></li>
+                <li class="nav-item"><a class="nav-link" href="chs-best-drive-thru.html">Drive Thru Directory</a></li>
+                <li class="nav-item"><a class="nav-link" href="all-day-breakfast.html">All Day Breakfast</a></li>
             </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Introduction -->
-    <section class="intro-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <p class="intro-text">
-                        Charleston and the surrounding Lowcountry areas offer an extensive network of drive thru food and beverage services designed for convenience and efficiency. From quick coffee stops to complete meals and refreshing drinks, the drive thru options throughout greater Charleston cater to busy lifestyles without requiring you to leave your vehicle. This comprehensive directory covers drive thru food and beverage locations across Charleston, Mount Pleasant, Summerville, North Charleston, West Ashley, James Island, Johns Island, Daniel Island, and Goose Creek, making it easy to find exactly what you need wherever you are in the area.
-                    </p>
-                </div>
+<body>
+
+<!-- ─── HERO ─── -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-6 pb-5 pb-lg-0">
+                <p class="hero-eyebrow"><i class="bi bi-geo-alt-fill me-1"></i> King Street · Downtown Charleston, SC</p>
+                <h1>Best Quick Drink Stops on King Street</h1>
+                <p class="lead">Fast, high-quality coffee, lattes, cold brew, and specialty drinks — right in the heart of downtown Charleston. No long waits. No compromise on quality.</p>
+                <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="hero-cta-btn">
+                    <i class="bi bi-cup-hot-fill me-2"></i>Visit Sweet Palm Coffee
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <img src="coff2.jpg" alt="Quick refreshments and grab and go drinks downtown Charleston King Street" class="hero-image">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Coffee & Beverages Section -->
-    <section id="coffee" class="category-section">
-        <div class="container">
-            <div class="category-header">
-                <h2><i class="bi bi-cup-hot me-3"></i>Drive Thru Coffee & Beverages</h2>
-                <p>Quick caffeine fixes and refreshing drinks without leaving your car</p>
-            </div>
+<!-- ─── INTRO ─── -->
+<section class="intro-section">
+    <div class="container">
+        <div class="col-lg-10 mx-auto">
+            <h2 class="h5 fw-bold mb-2">The Best Quick Drink Stops in Downtown Charleston</h2>
+            <div class="section-divider"></div>
+            <p class="intro-text mb-4">
+                Downtown Charleston has become one of the Southeast's best spots for quick, quality drinks on the go. King Street and the surrounding blocks are lined with cafes and coffee shops that have figured out how to serve genuinely great beverages — espresso, lattes, cold brew, iced teas, specialty drinks — without making you wait around for them. Whether you're grabbing something before a morning meeting, recharging between shops, or just need a good iced latte to carry down the street, this stretch of downtown delivers.
+            </p>
+            <p class="intro-text mb-0">
+                Among all the quick drink options downtown, one spot consistently stands above the rest for quality, speed, and variety — <strong>Sweet Palm Coffee</strong> on King Street. Here's a full look at the scene, starting with the best.
+            </p>
 
-            <div class="location-grid">
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-star-fill"></i></div>
-                    <h3>Starbucks</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Downtown Charleston, Mount Pleasant, Summerville, West Ashley, North Charleston</p>
-                    <span class="area-badge">Region-Wide</span>
+            <!-- ─── SWEET PALM FEATURED ─── -->
+            <div class="sweet-palm-banner">
+                <span class="badge-label"><i class="bi bi-star-fill me-1"></i> #1 Quick Drink Stop — King Street, Downtown Charleston</span>
+                <h2>Sweet Palm Coffee — The Go-To Quick Drink Stop</h2>
+                <p>
+                    If you need a great drink fast on King Street, <strong>Sweet Palm Coffee</strong> is the answer. This isn't one of those places where "grab and go" means lukewarm drip coffee in a paper cup. Sweet Palm runs a full coffee program — expertly pulled espresso, velvety lattes, cold brew, iced drinks — all with the kind of speed that actually fits into your day.
+                </p>
+                <p>
+                    The baristas here know what they're doing. Lattes come out consistently well-balanced, the seasonal drinks actually rotate and are worth trying, and if you want something cold on a warm Charleston afternoon, their iced options are some of the best on the peninsula. They also carry fresh pastries and grab and go food, so you can knock out a drink and a bite in one stop without slowing down.
+                </p>
+                <p>
+                    For tourists hitting the King Street shopping corridor, bachelorette groups starting a morning out, or downtown workers running between tasks — Sweet Palm is built for exactly that. Quick in, great drink, back out. That's the whole point, and they nail it every time.
+                </p>
+                <div class="mb-3">
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Artisan Espresso</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Handcrafted Lattes</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Cold Brew &amp; Iced Drinks</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Seasonal Specialties</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Premium Teas</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Fast, Friendly Service</span>
+                    <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> King Street Location</span>
                 </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-cup-straw"></i></div>
-                    <h3>Dunkin'</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, North Charleston, Summerville, West Ashley, James Island</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-lightning-fill"></i></div>
-                    <h3>Scooter's Coffee</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Mount Pleasant, Summerville</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Highway 17, Dorchester Road</p>
-                    <span class="area-badge">East Cooper & Summerville</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-cup-hot"></i></div>
-                    <h3>Krispy Kreme</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>North Charleston</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Rivers Avenue</p>
-                    <span class="area-badge">North Charleston</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-droplet-fill"></i></div>
-                    <h3>Dutch Bros Coffee</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Mount Pleasant, Summerville</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Highway 17, Old Trolley Road</p>
-                    <span class="area-badge">Growing Locations</span>
-                </div>
+                <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="visit-btn">
+                    <i class="bi bi-box-arrow-up-right me-2"></i>Visit sweetpalmcoffee.com
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Fast Food Section -->
-    <section id="fast-food" class="category-section">
-        <div class="container">
-            <div class="category-header">
-                <h2><i class="bi bi-bag me-3"></i>Drive Thru Fast Food</h2>
-                <p>Quick meals and snacks from your favorite national chains</p>
-            </div>
+<!-- ─── OTHER VENUES ─── -->
+<section class="venues-section">
+    <div class="container">
+        <h2 class="section-title text-center">More Quick Drink Spots Downtown</h2>
+        <div class="section-divider center"></div>
+        <p class="text-center text-muted mb-5" style="max-width:580px; margin: 0 auto 48px;">King Street and the surrounding downtown blocks have solid options beyond Sweet Palm. Here's the rest of the quick drink scene.</p>
 
-            <div class="location-grid">
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-egg-fried"></i></div>
-                    <h3>Chick-fil-A</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>All major Charleston areas including Downtown, Mount Pleasant, Summerville, West Ashley, North Charleston</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
+        <div class="row g-4">
 
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-basket"></i></div>
-                    <h3>McDonald's</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Throughout Charleston metro area</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-fire"></i></div>
-                    <h3>Wendy's</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, North Charleston, West Ashley, Summerville</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-shop"></i></div>
-                    <h3>Burger King</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>All Charleston areas</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-bell"></i></div>
-                    <h3>Taco Bell</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, North Charleston, West Ashley, Summerville</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-snow"></i></div>
-                    <h3>Sonic Drive-In</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, Summerville, Goose Creek, North Charleston</p>
-                    <span class="area-badge">Suburban Areas</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-box"></i></div>
-                    <h3>Arby's</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>North Charleston, Mount Pleasant</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Rivers Avenue, Highway 17</p>
-                    <span class="area-badge">Select Locations</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-trophy"></i></div>
-                    <h3>Bojangles</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Throughout Charleston area</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-cloud"></i></div>
-                    <h3>Popeyes</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>North Charleston, Mount Pleasant, West Ashley</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-cart"></i></div>
-                    <h3>Cook Out</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>North Charleston, Summerville</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Rivers Avenue, Old Trolley Road</p>
-                    <span class="area-badge">Select Locations</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-gem"></i></div>
-                    <h3>Zaxby's</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, Summerville, North Charleston, West Ashley</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-shield"></i></div>
-                    <h3>Raising Cane's</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Mount Pleasant, Summerville</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Highway 17, Old Trolley Road</p>
-                    <span class="area-badge">East Cooper & Summerville</span>
+            <!-- Kudu -->
+            <div class="col-md-6 col-lg-4">
+                <div class="venue-card">
+                    <i class="bi bi-lightning-fill venue-icon"></i>
+                    <h3>Kudu Coffee &amp; Craft Beer</h3>
+                    <span class="venue-location"><i class="bi bi-geo-alt me-1"></i>Vanderhorst Street, Downtown</span>
+                    <p>Kudu has built a loyal following for its reliable grab and go coffee service. Known for bold, robust selections and quick counter service, this downtown staple is a solid choice when you need a strong coffee fast. Their cold brew and iced options are especially popular during Charleston's warm months.</p>
+                    <div class="drink-list">
+                        <span>Strong drip coffee and espresso</span>
+                        <span>Signature iced coffee and cold brew</span>
+                        <span>Classic and flavored lattes</span>
+                        <span>Hot and iced teas</span>
+                    </div>
                 </div>
             </div>
+
+            <!-- Black Tap -->
+            <div class="col-md-6 col-lg-4">
+                <div class="venue-card">
+                    <i class="bi bi-droplet-fill venue-icon"></i>
+                    <h3>Black Tap Coffee</h3>
+                    <span class="venue-location"><i class="bi bi-geo-alt me-1"></i>King Street, Downtown</span>
+                    <p>Black Tap is optimized for speed without dropping quality. The modern setup and streamlined ordering make quick drink runs easy, and the rotating seasonal menu keeps things interesting. A dependable stop when you need quality espresso drinks without a long wait.</p>
+                    <div class="drink-list">
+                        <span>Premium espresso and coffee drinks</span>
+                        <span>Specialty lattes with house syrups</span>
+                        <span>Refreshing iced beverages</span>
+                        <span>Curated tea menu</span>
+                    </div>
+                    <a class="card-btn" href="https://www.blackdoorcafe.com/" target="_blank" rel="noopener">Visit Black Tap</a>
+                </div>
+            </div>
+
+            <!-- City Lights -->
+            <div class="col-md-6 col-lg-4">
+                <div class="venue-card">
+                    <i class="bi bi-brightness-alt-high-fill venue-icon"></i>
+                    <h3>City Lights Coffee</h3>
+                    <span class="venue-location"><i class="bi bi-geo-alt me-1"></i>Multiple Downtown Locations</span>
+                    <p>City Lights runs multiple downtown locations, which means convenience wherever you are on the King Street corridor. Consistent quality across locations, a solid espresso program, and efficient service make it a reliable quick drink stop for regulars who know what they want.</p>
+                    <div class="drink-list">
+                        <span>Consistent quality espresso and coffee</span>
+                        <span>Variety of hot and iced lattes</span>
+                        <span>Fresh brewed teas</span>
+                        <span>Seasonal specialty beverages</span>
+                    </div>
+                    <a class="card-btn" href="https://citylightseastside0542.s4shops.com/" target="_blank" rel="noopener">Visit City Lights</a>
+                </div>
+            </div>
+
+            <!-- The Daily -->
+            <div class="col-md-6 col-lg-4">
+                <div class="venue-card">
+                    <i class="bi bi-newspaper venue-icon"></i>
+                    <h3>The Daily</h3>
+                    <span class="venue-location"><i class="bi bi-geo-alt me-1"></i>King Street, Downtown</span>
+                    <p>The Daily keeps it focused — a tightly edited menu of well-executed coffee and tea drinks, served quickly. No fuss, no long decisions. If you're a creature of habit who wants the same great drink every morning without any surprises, The Daily earns its name.</p>
+                    <div class="drink-list">
+                        <span>Reliable coffee and espresso drinks</span>
+                        <span>Simple, well-crafted lattes</span>
+                        <span>Quality tea selections</span>
+                        <span>Fast, no-frills service</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blum -->
+            <div class="col-md-6 col-lg-4">
+                <div class="venue-card">
+                    <i class="bi bi-cup-straw venue-icon"></i>
+                    <h3>Blum Coffee &amp; Wine</h3>
+                    <span class="venue-location"><i class="bi bi-geo-alt me-1"></i>King Street, Downtown</span>
+                    <p>Blum has a loyal following for good reason — the coffee is genuinely good and the vibe is relaxed without being slow. Great for a quick iced drink to carry while exploring King Street, or a morning espresso before a long day of shopping the downtown corridor.</p>
+                    <div class="drink-list">
+                        <span>Espresso and specialty coffee</span>
+                        <span>Iced drinks and cold brew</span>
+                        <span>Pastries and light bites</span>
+                        <span>Casual grab and go setup</span>
+                    </div>
+                    <a class="card-btn" href="http://www.blumsc.com" target="_blank" rel="noopener">Visit Blum</a>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Restaurants Section -->
-    <section id="restaurants" class="category-section">
-        <div class="container">
-            <div class="category-header">
-                <h2><i class="bi bi-shop-window me-3"></i>Drive Thru Restaurants</h2>
-                <p>Sit-down restaurant quality with drive thru convenience</p>
-            </div>
-
-            <div class="location-grid">
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-tree"></i></div>
-                    <h3>Panera Bread</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, West Ashley, North Charleston</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-wind"></i></div>
-                    <h3>Chipotle</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, West Ashley (Mobile ordering pickup)</p>
-                    <span class="area-badge">Select Locations</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-flower1"></i></div>
-                    <h3>Moe's Southwest Grill</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Mount Pleasant, North Charleston</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Various suburban locations</p>
-                    <span class="area-badge">Select Locations</span>
-                </div>
-
-                <div class="location-card">
-                    <div class="icon-badge"><i class="bi bi-tropical-storm"></i></div>
-                    <h3>Tropical Smoothie Cafe</h3>
-                    <p class="location-info"><i class="bi bi-geo-alt-fill"></i>Multiple Locations</p>
-                    <p class="location-info"><i class="bi bi-pin-map"></i>Mount Pleasant, Summerville, West Ashley</p>
-                    <span class="area-badge">Region-Wide</span>
-                </div>
-            </div>
+<!-- ─── WHY KING STREET ─── -->
+<section class="why-section">
+    <div class="container">
+        <div class="col-lg-9 mx-auto">
+            <h2 class="section-title mb-2">Why King Street Is Charleston's Best Spot for a Quick Drink</h2>
+            <div class="section-divider" style="background: var(--blue-light);"></div>
+            <p>
+                King Street's density of quality coffee shops isn't a coincidence. The foot traffic from tourists, locals, and downtown workers has created a competitive coffee scene where mediocre gets weeded out fast. What's left is a stretch of genuinely good quick drink options within walking distance of each other — which is pretty rare for a city this size.
+            </p>
+            <p class="mt-3">
+                The walkable layout is a big part of what makes it work. You can park or walk from the Market area and hit multiple spots in a single pass. But if you're only stopping once, make it count. Sweet Palm Coffee remains the benchmark for what a quick drink stop on King Street should look like — quality coffee, real food options, and a team that moves fast without making you feel rushed.
+            </p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <section class="footer-info">
-        <div class="container">
-            <h3>Find What You Need, Fast</h3>
-            <p>This directory covers the greater Charleston area including Charleston, Mount Pleasant, Summerville,<br>North Charleston, West Ashley, James Island, Johns Island, Daniel Island, and Goose Creek</p>
-            <p class="mt-4"><small>Directory updated regularly. Please verify hours and locations before visiting.</small></p>
-        </div>
-    </section>
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Your Next Quick Drink Stop Is Waiting</h2>
+        <p>
+            Whether you're starting your morning, taking a midday break, or just need something good to sip while you walk King Street — Sweet Palm Coffee is the move. Great drinks, fast service, right in the heart of downtown Charleston.
+        </p>
+        <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="main-cta">
+            <i class="bi bi-cup-hot-fill me-2"></i>Visit Sweet Palm Coffee
+        </a>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<footer>
+    <p class="mb-0">&copy; 2025 Charleston Eats · Quick Drinks on King Street · Downtown Charleston, SC</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
